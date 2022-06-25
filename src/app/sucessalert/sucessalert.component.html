@@ -1,0 +1,22 @@
+<h1 class="m-5">SuccessAlert made</h1>
+<p class="m-5" >User is {{serverStatus}} with id {{serverid}}</p><br>
+<button (click)="server()" [disabled]="!allowserver"  class="btn btn-primary m-5">Add server</button><br>
+
+    <span><b>{{createserver}}</b></span>
+
+<input type="text" (input)="ser($event)" class="form-control">
+<p>{{sers}}</p>
+<input type="text" [(ngModel)]="serverName" class="form-control">
+<p>{{serverName}}</p>
+<input type="text" [(ngModel)]="user" class="form-control">
+<p>{{user}}</p>
+<button [disabled]="user===''" (click)="user=''">Reset</button>
+<!-- ngstyle -->
+<p [ngStyle]="{color:getcolor()}">{{serverStatus}}</p>
+<!-- ngclass -->
+<span [ngClass]="{seclass:serverStatus==='online'}">{{serverStatus}}</span><br>
+<!-- <button (click)="showsecret=!showsecret" class="m-3 btn btn-success">Display details</button> -->
+<button (click)="toggle()" class="m-3 btn btn-success">Display details</button>
+<p *ngIf="showsecret">Secert password=tuna</p>
+<!-- assignment -->
+<h4  *ngFor="let log of arraylog ; let i in index" [ngStyle]="{backgroundColor:i>=5? 'blue' :'transparent'}" [ngClass]="{col:i>=5}">{{i}}</h4>
